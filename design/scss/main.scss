@@ -1,0 +1,220 @@
+@use 'colors' as *;
+
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+:root {
+	font-size: 112.5%;
+}
+
+body {
+	background-color: $main-bg;
+	font-family: 'Rubik', sans-serif;
+	margin: 4em 1em 1em;
+}
+
+// PERSON CARD
+.header-card {
+	position: relative;
+	min-height: 160px;
+	background-color: $card-bg;
+	border-radius: 12px;
+
+	&-body {
+		position: absolute;
+		top: 0;
+		width: 100%;
+		height: 6rem;
+		background-color: $blue;
+		border-radius: 12px;
+
+		&__heading {
+			display: flex;
+			align-items: center;
+			justify-content: space-around;
+			height: 100%;
+			padding-left: 1em;
+			padding-right: 1.5em;
+		}
+
+		&__pfp {
+			width: 60px;
+			border: 3px solid $main-color;
+			border-radius: 50%;
+		}
+
+		&__title {
+			font-size: 0.8rem;
+			color: $pale-blue;
+			font-weight: 300;
+
+			p {
+				margin-top: 0.2em;
+				font-size: 1.2rem;
+				color: $main-color;
+			}
+		}
+	}
+
+	&__time-periods {
+		display: flex;
+		align-items: flex-end;
+		justify-content: space-between;
+		min-height: 160px;
+		height: 100%;
+		padding: 1em 1.5em;
+	}
+
+	&__button {
+		font-size: 0.9rem;
+		color: $desaturated-blue;
+		background-color: transparent;
+		border: none;
+		cursor: pointer;
+		transition: color 0.3s;
+
+		&:hover,
+		&:focus,
+		&:active {
+			color: $main-color;
+		}
+	}
+}
+
+// CARDS
+.activities {
+	&__work {
+		background-color: $work;
+		background-image: url(/images/icon-work.svg);
+	}
+
+	&__play {
+		background-color: $play;
+		background-image: url(/images/icon-play.svg);
+	}
+
+	&__study {
+		background-color: $study;
+		background-image: url(/images/icon-study.svg);
+	}
+
+	&__exercise {
+		background-color: $exercise;
+		background-image: url(/images/icon-exercise.svg);
+	}
+
+	&__social {
+		background-color: $social;
+		background-image: url(/images/icon-social.svg);
+	}
+
+	&__self-care {
+		background-color: $self-care;
+		background-image: url(/images/icon-self-care.svg);
+	}
+	&-card {
+		position: relative;
+		margin-top: 1em;
+		min-height: 160px;
+		width: 100%;
+		border-radius: 12px;
+		background-repeat: no-repeat;
+		background-position: 95% -15%;
+
+		&__body {
+			position: absolute;
+			bottom: 0;
+			padding: 1.5em 1em;
+			height: 75%;
+			width: 100%;
+			background-color: $card-bg;
+			border-radius: 10px;
+			color: $main-color;
+		}
+
+		&__title {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+
+		&__text {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			margin-top: 0;
+			height: 50px;
+
+			p {
+				&:first-of-type {
+					font-size: 1.5rem;
+					font-weight: 300;
+				}
+
+				&:last-of-type {
+					font-size: 0.8rem;
+					color: $pale-blue;
+				}
+			}
+		}
+	}
+}
+// ## Layout
+
+// The designs were created to the following widths:
+
+// - Mobile: 375px
+// - Desktop: 1440px
+
+// ## Colors
+
+// ### Primary
+
+// - Blue: hsl(246, 80%, 60%)
+
+// - Light red (work): hsl(15, 100%, 70%)
+// - Soft blue (play): hsl(195, 74%, 62%)
+// - Light red (study): hsl(348, 100%, 68%)
+// - Lime green (exercise): hsl(145, 58%, 55%)
+// - Violet (social): hsl(264, 64%, 52%)
+// - Soft orange (self care): hsl(43, 84%, 65%)
+
+// ### Neutral
+
+// - Very dark blue: hsl(226, 43%, 10%)
+// - Dark blue: hsl(235, 46%, 20%)
+// - Desaturated blue: hsl(235, 45%, 61%)
+// - Pale Blue: hsl(236, 100%, 87%)
+
+// ## Typography
+
+// ### Body Copy
+
+// - Font size: 18px (card titles e.g. Work, Play)
+
+// ### Font
+
+// - Family: [Rubik](https://fonts.google.com/specimen/Rubik)
+// - Weights: 300, 400, 500
+
+// ATTRIBUTION
+.attribution {
+	margin-top: 5em;
+	font-size: 0.5rem;
+	text-align: center;
+	color: $main-color;
+}
+.attribution a {
+	color: hsl(228, 45%, 44%);
+	text-decoration: none;
+	transition: color 0.3s;
+
+	&:hover {
+		color: $pale-blue;
+	}
+}

@@ -1,0 +1,154 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 112.5%;
+}
+
+body {
+  background-color: hsl(226deg, 43%, 10%);
+  font-family: "Rubik", sans-serif;
+  margin: 4em 1em 1em;
+}
+
+.header-card {
+  position: relative;
+  min-height: 160px;
+  background-color: hsl(235deg, 46%, 20%);
+  border-radius: 12px;
+}
+.header-card-body {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 6rem;
+  background-color: hsl(246deg, 80%, 60%);
+  border-radius: 12px;
+}
+.header-card-body__heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 100%;
+  padding-left: 1em;
+  padding-right: 1.5em;
+}
+.header-card-body__pfp {
+  width: 60px;
+  border: 3px solid hsl(0deg, 0%, 100%);
+  border-radius: 50%;
+}
+.header-card-body__title {
+  font-size: 0.8rem;
+  color: hsl(236deg, 100%, 87%);
+  font-weight: 300;
+}
+.header-card-body__title p {
+  margin-top: 0.2em;
+  font-size: 1.2rem;
+  color: hsl(0deg, 0%, 100%);
+}
+.header-card__time-periods {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  min-height: 160px;
+  height: 100%;
+  padding: 1em 1.5em;
+}
+.header-card__button {
+  font-size: 0.9rem;
+  color: hsl(235deg, 45%, 61%);
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+.header-card__button:hover, .header-card__button:focus, .header-card__button:active {
+  color: hsl(0deg, 0%, 100%);
+}
+
+.activities__work {
+  background-color: hsl(15deg, 100%, 70%);
+  background-image: url(/images/icon-work.svg);
+}
+.activities__play {
+  background-color: hsl(195deg, 74%, 62%);
+  background-image: url(/images/icon-play.svg);
+}
+.activities__study {
+  background-color: hsl(348deg, 100%, 68%);
+  background-image: url(/images/icon-study.svg);
+}
+.activities__exercise {
+  background-color: hsl(145deg, 58%, 55%);
+  background-image: url(/images/icon-exercise.svg);
+}
+.activities__social {
+  background-color: hsl(264deg, 64%, 52%);
+  background-image: url(/images/icon-social.svg);
+}
+.activities__self-care {
+  background-color: hsl(43deg, 84%, 65%);
+  background-image: url(/images/icon-self-care.svg);
+}
+.activities-card {
+  position: relative;
+  margin-top: 1em;
+  min-height: 160px;
+  width: 100%;
+  border-radius: 12px;
+  background-repeat: no-repeat;
+  background-position: 95% -15%;
+}
+.activities-card__body {
+  position: absolute;
+  bottom: 0;
+  padding: 1.5em 1em;
+  height: 75%;
+  width: 100%;
+  background-color: hsl(235deg, 46%, 20%);
+  border-radius: 10px;
+  color: hsl(0deg, 0%, 100%);
+}
+.activities-card__title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.activities-card__text {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0;
+  height: 50px;
+}
+.activities-card__text p:first-of-type {
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+.activities-card__text p:last-of-type {
+  font-size: 0.8rem;
+  color: hsl(236deg, 100%, 87%);
+}
+
+.attribution {
+  margin-top: 5em;
+  font-size: 0.5rem;
+  text-align: center;
+  color: hsl(0deg, 0%, 100%);
+}
+
+.attribution a {
+  color: hsl(228deg, 45%, 44%);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.attribution a:hover {
+  color: hsl(236deg, 100%, 87%);
+}/*# sourceMappingURL=main.css.map */
