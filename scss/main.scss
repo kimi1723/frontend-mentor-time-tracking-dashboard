@@ -206,7 +206,17 @@ body {
 	}
 }
 
-@media (max-width: 320px) {
+@media (max-width: 319px) {
+	.activities {
+		&-card {
+			&__text {
+				p:last-of-type {
+					font-size: 0.6rem;
+				}
+			}
+		}
+	}
+
 	.header-card {
 		&-body {
 			&__heading {
