@@ -18,16 +18,22 @@ body {
 	align-items: center;
 	justify-content: center;
 	min-height: 100vh;
+	max-width: 100%;
 	background-color: $main-bg;
 	font-family: 'Rubik', sans-serif;
 	padding: 4em 1em 1em;
+}
+
+.active {
+	color: $main-color !important;
 }
 
 // PERSON CARD
 .header-card {
 	position: relative;
 	min-height: 160px;
-	width: clamp(230px, 100%, 320px);
+	min-width: 230px;
+	width: 100%;
 	background-color: $card-bg;
 	border-radius: 12px;
 
@@ -94,16 +100,14 @@ body {
 
 // CARDS
 .main {
-	// display: flex;
-	// justify-content: center;
 	width: 100%;
+	max-width: 900px;
 }
 
 .activities {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	max-width: 1200px;
 
 	&__work {
 		background-color: $work;
@@ -139,7 +143,8 @@ body {
 		position: relative;
 		margin-top: 1em;
 		min-height: 160px;
-		width: clamp(230px, 100%, 320px);
+		min-width: 230px;
+		width: 100%;
 		border-radius: 12px;
 		background-repeat: no-repeat;
 		background-position: 95% -5%;
@@ -222,21 +227,81 @@ body {
 	}
 }
 
-@media (min-width: 992px) {
+@media (min-width: 576px) {
+	.activities {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: repeat(3, 1fr);
+		gap: 1em 1.5em;
+		padding: 0 2em;
+
+		.header-card {
+			grid-column: 1 / 3;
+			width: 100%;
+			grid-row: 1 / 2;
+
+			&-body {
+				&__title {
+					font-size: 1rem;
+					justify-content: space-evenly;
+
+					p {
+						font-size: 2rem;
+					}
+				}
+			}
+
+			&__time-periods {
+				display: flex;
+				justify-content: space-around;
+			}
+			&__button {
+				font-size: 1.2rem;
+			}
+		}
+
+		&-card {
+			&:nth-of-type(1),
+			&:nth-of-type(2) {
+				grid-row: 2 / 3;
+			}
+
+			&:nth-of-type(3),
+			&:nth-of-type(4) {
+				grid-row: 3 / 4;
+			}
+
+			&:nth-of-type(5),
+			&:nth-of-type(6) {
+				grid-row: 4 / 5;
+			}
+		}
+	}
+}
+
+@media (min-width: 768px) {
+	.activities {
+		padding: 0 4em;
+	}
+}
+
+@media (min-width: 996px) {
 	body {
-		padding: 6em;
+		padding: 0 7em;
 	}
 
 	.activities {
 		display: grid;
 		grid-template-columns: repeat(4, 1fr);
 		grid-template-rows: 1fr 1fr;
-		gap: 0.5em 1em;
+		gap: 1.5em;
+		padding: 0;
 
 		.header-card {
 			grid-row: 1 / 3;
+			grid-column: 1 / 2;
 			height: 100%;
-			width: clamp(150px, 100%, 320px);
+			min-width: 220px;
 
 			&-body {
 				height: 70%;
@@ -248,7 +313,9 @@ body {
 				}
 
 				&__title {
+					font-size: 1rem;
 					padding-bottom: 2em;
+
 					p {
 						font-size: 2rem;
 					}
@@ -262,13 +329,17 @@ body {
 			}
 
 			&__button {
-				padding: 0.5em 0;
+				padding: 0.7em 0 0.3em;
+				font-size: 0.8rem;
 			}
 		}
 
 		&-card {
-			min-height: 190px;
-			width: clamp(150px, 100%, 320px);
+			height: 100%;
+			min-height: 180px;
+			width: 100%;
+			min-width: 180px;
+			margin: 0;
 
 			&:nth-of-type(-n + 3) {
 				grid-row: 1 / 2;
@@ -294,7 +365,36 @@ body {
 			}
 
 			&__body {
+				padding-top: 1em;
 				height: 80%;
+			}
+
+			&__title {
+				font-size: 0.6rem;
+
+				img {
+					width: 15px;
+					cursor: pointer;
+				}
+			}
+
+			&__text {
+				height: 100%;
+				flex-direction: column;
+				align-items: flex-start;
+				justify-content: flex-end;
+
+				p {
+					&:first-of-type {
+						padding-left: 0.2em;
+						font-size: 2rem;
+					}
+
+					&:last-of-type {
+						font-size: 0.6rem;
+						padding: 1em 0;
+					}
+				}
 			}
 		}
 	}
@@ -305,40 +405,37 @@ body {
 		font-size: 0.7rem;
 	}
 }
-// ## Layout
 
-// The designs were created to the following widths:
+@media (min-width: 1200px) {
+	.activities {
+		.header-card {
+			max-width: 200px;
 
-// - Mobile: 375px
-// - Desktop: 1440px
+			&__button {
+				padding: 0.7em 0 0.3em;
+				font-size: 0.9rem;
+			}
+		}
 
-// ## Colors
+		&-card {
+			min-height: 200px;
 
-// ### Primary
+			&__title {
+				font-size: 0.7rem;
+			}
 
-// - Blue: hsl(246, 80%, 60%)
+			&__text {
+				p {
+					&:first-of-type {
+						font-size: 2rem;
+					}
 
-// - Light red (work): hsl(15, 100%, 70%)
-// - Soft blue (play): hsl(195, 74%, 62%)
-// - Light red (study): hsl(348, 100%, 68%)
-// - Lime green (exercise): hsl(145, 58%, 55%)
-// - Violet (social): hsl(264, 64%, 52%)
-// - Soft orange (self care): hsl(43, 84%, 65%)
-
-// ### Neutral
-
-// - Very dark blue: hsl(226, 43%, 10%)
-// - Dark blue: hsl(235, 46%, 20%)
-// - Desaturated blue: hsl(235, 45%, 61%)
-// - Pale Blue: hsl(236, 100%, 87%)
-
-// ## Typography
-
-// ### Body Copy
-
-// - Font size: 18px (card titles e.g. Work, Play)
-
-// ### Font
-
-// - Family: [Rubik](https://fonts.google.com/specimen/Rubik)
-// - Weights: 300, 400, 500
+					&:last-of-type {
+						font-size: 0.7rem;
+						margin-bottom: 1em;
+					}
+				}
+			}
+		}
+	}
+}
