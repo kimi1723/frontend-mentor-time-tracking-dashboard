@@ -22,17 +22,16 @@ body {
   padding: 4em 1em 1em;
 }
 
-.active {
-  color: hsl(0deg, 0%, 100%) !important;
-}
-
 .header-card {
   position: relative;
   min-height: 160px;
   min-width: 230px;
   width: 100%;
-  background-color: hsl(235deg, 46%, 20%);
   border-radius: 12px;
+  background-color: hsl(235deg, 46%, 20%);
+}
+.header-card .active {
+  color: hsl(0deg, 0%, 100%);
 }
 .header-card-body {
   position: absolute;
@@ -65,23 +64,24 @@ body {
   font-size: 1.2rem;
   color: hsl(0deg, 0%, 100%);
 }
-.header-card__time-periods {
+.header-card-time-periods {
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
   min-height: 160px;
   height: 100%;
-  padding: 1em 1.5em;
+  padding: 0 1.5em;
 }
-.header-card__button {
+.header-card-time-periods__button {
+  padding: 0.8em 1em;
   font-size: 0.9rem;
   color: hsl(235deg, 45%, 61%);
   background-color: transparent;
   border: none;
-  cursor: pointer;
   transition: color 0.3s;
+  cursor: pointer;
 }
-.header-card__button:hover, .header-card__button:focus, .header-card__button:active {
+.header-card-time-periods__button:hover, .header-card-time-periods__button:focus, .header-card-time-periods__button:active {
   color: hsl(0deg, 0%, 100%);
 }
 
@@ -121,11 +121,11 @@ body {
 }
 .activities-card {
   position: relative;
-  margin-top: 1em;
   min-height: 160px;
   min-width: 230px;
   width: 100%;
   border-radius: 12px;
+  margin-top: 1em;
   background-repeat: no-repeat;
   background-position: 95% -5%;
 }
@@ -176,10 +176,18 @@ body {
   color: hsl(236deg, 100%, 87%);
 }
 
-@media (max-width: 280px) {
+@media (max-width: 250px) {
+  body {
+    padding: 0em;
+  }
+}
+@media (max-width: 320px) {
   .header-card-body__heading {
     padding: 0;
     font-size: 0.5rem;
+  }
+  .header-card-time-periods {
+    padding: 0;
   }
 }
 @media (max-width: 320px) {
@@ -207,11 +215,11 @@ body {
   .activities .header-card-body__title p {
     font-size: 2rem;
   }
-  .activities .header-card__time-periods {
+  .activities .header-card-time-periods {
     display: flex;
     justify-content: space-around;
   }
-  .activities .header-card__button {
+  .activities .header-card-time-periods__button {
     font-size: 1.2rem;
   }
   .activities-card:nth-of-type(1), .activities-card:nth-of-type(2) {
@@ -223,13 +231,22 @@ body {
   .activities-card:nth-of-type(5), .activities-card:nth-of-type(6) {
     grid-row: 4/5;
   }
+  .activities-card__text p:last-of-type {
+    font-size: 0.6rem;
+  }
 }
 @media (min-width: 768px) {
   .activities {
     padding: 0 4em;
   }
+  .activities .header-card-time-periods {
+    padding: 0;
+  }
+  .activities .header-card-time-periods__button {
+    padding: 0.7em;
+  }
 }
-@media (min-width: 996px) {
+@media (min-width: 992px) {
   body {
     padding: 0 7em;
   }
@@ -261,12 +278,13 @@ body {
   .activities .header-card-body__title p {
     font-size: 2rem;
   }
-  .activities .header-card__time-periods {
+  .activities .header-card-time-periods {
     flex-direction: column;
     justify-content: flex-end;
     align-items: flex-start;
+    padding: 1em 1.5em;
   }
-  .activities .header-card__button {
+  .activities .header-card-time-periods__button {
     padding: 0.7em 0 0.3em;
     font-size: 0.8rem;
   }
@@ -314,7 +332,6 @@ body {
     font-size: 2rem;
   }
   .activities-card__text p:last-of-type {
-    font-size: 0.6rem;
     padding: 1em 0;
   }
   .attribution {
@@ -327,8 +344,7 @@ body {
   .activities .header-card {
     max-width: 200px;
   }
-  .activities .header-card__button {
-    padding: 0.7em 0 0.3em;
+  .activities .header-card-time-periods__button {
     font-size: 0.9rem;
   }
   .activities-card {

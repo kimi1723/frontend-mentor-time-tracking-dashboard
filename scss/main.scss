@@ -1,4 +1,5 @@
 @use 'colors' as *;
+@use 'mixins' as *;
 
 *,
 *::before,
@@ -24,18 +25,14 @@ body {
 	padding: 4em 1em 1em;
 }
 
-.active {
-	color: $main-color !important;
-}
-
 // PERSON CARD
 .header-card {
-	position: relative;
-	min-height: 160px;
-	min-width: 230px;
-	width: 100%;
+	@include card;
 	background-color: $card-bg;
-	border-radius: 12px;
+
+	.active {
+		color: $main-color;
+	}
 
 	&-body {
 		position: absolute;
@@ -73,27 +70,28 @@ body {
 		}
 	}
 
-	&__time-periods {
+	&-time-periods {
 		display: flex;
 		align-items: flex-end;
 		justify-content: space-between;
 		min-height: 160px;
 		height: 100%;
-		padding: 1em 1.5em;
-	}
+		padding: 0 1.5em;
 
-	&__button {
-		font-size: 0.9rem;
-		color: $desaturated-blue;
-		background-color: transparent;
-		border: none;
-		cursor: pointer;
-		transition: color 0.3s;
+		&__button {
+			padding: 0.8em 1em;
+			font-size: 0.9rem;
+			color: $desaturated-blue;
+			background-color: transparent;
+			border: none;
+			transition: color 0.3s;
+			cursor: pointer;
 
-		&:hover,
-		&:focus,
-		&:active {
-			color: $main-color;
+			&:hover,
+			&:focus,
+			&:active {
+				color: $main-color;
+			}
 		}
 	}
 }
@@ -140,12 +138,8 @@ body {
 	}
 
 	&-card {
-		position: relative;
+		@include card;
 		margin-top: 1em;
-		min-height: 160px;
-		min-width: 230px;
-		width: 100%;
-		border-radius: 12px;
 		background-repeat: no-repeat;
 		background-position: 95% -5%;
 
@@ -206,13 +200,23 @@ body {
 }
 
 // MEDIA
-@media (max-width: 280px) {
+@media (max-width: 250px) {
+	body {
+		padding: 0em;
+	}
+}
+
+@media (max-width: 320px) {
 	.header-card {
 		&-body {
 			&__heading {
 				padding: 0;
 				font-size: 0.5rem;
 			}
+		}
+
+		&-time-periods {
+			padding: 0;
 		}
 	}
 }
@@ -251,12 +255,12 @@ body {
 				}
 			}
 
-			&__time-periods {
+			&-time-periods {
 				display: flex;
 				justify-content: space-around;
-			}
-			&__button {
-				font-size: 1.2rem;
+				&__button {
+					font-size: 1.2rem;
+				}
 			}
 		}
 
@@ -275,6 +279,12 @@ body {
 			&:nth-of-type(6) {
 				grid-row: 4 / 5;
 			}
+
+			&__text {
+				p:last-of-type {
+					font-size: 0.6rem;
+				}
+			}
 		}
 	}
 }
@@ -282,10 +292,20 @@ body {
 @media (min-width: 768px) {
 	.activities {
 		padding: 0 4em;
+
+		.header-card {
+			&-time-periods {
+				padding: 0;
+
+				&__button {
+					padding: 0.7em;
+				}
+			}
+		}
 	}
 }
 
-@media (min-width: 996px) {
+@media (min-width: 992px) {
 	body {
 		padding: 0 7em;
 	}
@@ -322,15 +342,16 @@ body {
 				}
 			}
 
-			&__time-periods {
+			&-time-periods {
 				flex-direction: column;
 				justify-content: flex-end;
 				align-items: flex-start;
-			}
+				padding: 1em 1.5em;
 
-			&__button {
-				padding: 0.7em 0 0.3em;
-				font-size: 0.8rem;
+				&__button {
+					padding: 0.7em 0 0.3em;
+					font-size: 0.8rem;
+				}
 			}
 		}
 
@@ -391,7 +412,6 @@ body {
 					}
 
 					&:last-of-type {
-						font-size: 0.6rem;
 						padding: 1em 0;
 					}
 				}
@@ -411,9 +431,10 @@ body {
 		.header-card {
 			max-width: 200px;
 
-			&__button {
-				padding: 0.7em 0 0.3em;
-				font-size: 0.9rem;
+			&-time-periods {
+				&__button {
+					font-size: 0.9rem;
+				}
 			}
 		}
 
