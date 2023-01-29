@@ -62,10 +62,15 @@ body {
 			color: $pale-blue;
 			font-weight: 300;
 
-			p {
+			span {
 				margin-top: 0.2em;
 				font-size: 1.2rem;
 				color: $main-color;
+
+				&::before {
+					content: '\a';
+					white-space: pre;
+				}
 			}
 		}
 	}
@@ -259,7 +264,7 @@ body {
 					font-size: 1rem;
 					justify-content: space-evenly;
 
-					p {
+					span {
 						font-size: 2rem;
 					}
 				}
@@ -345,10 +350,6 @@ body {
 				&__title {
 					font-size: 1rem;
 					padding-bottom: 2em;
-
-					p {
-						font-size: 2rem;
-					}
 				}
 			}
 

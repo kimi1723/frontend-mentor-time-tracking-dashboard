@@ -1,5 +1,5 @@
 const timeFrameBtns = document.querySelectorAll('.header-card-time-periods__button');
-const elements = document.querySelectorAll('h3');
+const elements = document.querySelectorAll('h2');
 const elementNames = [];
 
 elements.forEach(element => elementNames.push(element.dataset.name));

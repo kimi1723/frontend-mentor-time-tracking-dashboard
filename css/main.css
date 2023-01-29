@@ -59,10 +59,14 @@ body {
   color: hsl(236deg, 100%, 87%);
   font-weight: 300;
 }
-.header-card-body__title p {
+.header-card-body__title span {
   margin-top: 0.2em;
   font-size: 1.2rem;
   color: hsl(0deg, 0%, 100%);
+}
+.header-card-body__title span::before {
+  content: "\a";
+  white-space: pre;
 }
 .header-card-time-periods {
   display: flex;
@@ -215,7 +219,7 @@ body {
     font-size: 1rem;
     justify-content: space-evenly;
   }
-  .activities .header-card-body__title p {
+  .activities .header-card-body__title span {
     font-size: 2rem;
   }
   .activities .header-card-time-periods {
@@ -277,9 +281,6 @@ body {
   .activities .header-card-body__title {
     font-size: 1rem;
     padding-bottom: 2em;
-  }
-  .activities .header-card-body__title p {
-    font-size: 2rem;
   }
   .activities .header-card-time-periods {
     flex-direction: column;
