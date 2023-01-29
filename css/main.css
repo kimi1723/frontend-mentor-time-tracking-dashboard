@@ -132,6 +132,14 @@ body {
   margin-top: 1em;
   background-repeat: no-repeat;
   background-position: 95% -5%;
+  transition: scale 0.3s;
+}
+.activities-card:hover {
+  scale: 1.05;
+  cursor: pointer;
+}
+.activities-card:hover .activities-card__body {
+  background-color: hsl(246deg, 80%, 60%);
 }
 .activities-card__body {
   position: absolute;
@@ -142,6 +150,7 @@ body {
   background-color: hsl(235deg, 46%, 20%);
   border-radius: 10px;
   color: hsl(0deg, 0%, 100%);
+  transition: background-color 0.3s;
 }
 .activities-card__title {
   display: flex;
